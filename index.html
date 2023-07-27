@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title> MDP Générator </title>
+            <meta charset = "utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="style.css"> 
+            <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+        </head> 
+    <body>
+        <div class="container">
+            <h1> Générateur de Mot de Passe </h1>
+        </div>
+        <div class="button">
+            <input type="button" onclick='window.location.reload(false)' value="Rechercher un nouveau mdp"/>
+        </div>
+
+        <h2>
+            <py-script>
+                import random 
+
+                lower = "abcdefghijklmnopqrstuvwxyz"
+                upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                number = "0123456789" 
+                symbol = "[]{}()*$;/,._-"
+
+                all = lower + upper + number + symbol
+                length = 10
+                password = "".join(random.sample(all, length))
+
+                print(password) 
+            </py-script>
+        </h2>
+
+    </body>
+    </html>
+    
